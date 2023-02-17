@@ -1,17 +1,29 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"strconv"
+	"os"
+	"selendis/g"
 )
-
-var userInfo = map[string]int {
-	"foo": 12,
-	"bar": 28,
-	"hello": 100,
-}
 
 
 func main() {
-	fmt.Println(strconv.Itoa(userInfo["foo"]))
+	//cfg 
+	cfg := flag.String("c", "cfg.yaml", "configuretion file")
+	version := flag.Bool("v", false, "display Version")
+
+	flag.Parse()
+
+	// print Version
+	if *version {
+		fmt.Println(g.VERSION)
+		os.Exit(0)
+	}
+
+	// load cfg
+	g.ParseConfig(*cfg)
+
+
+	select {}
 }
