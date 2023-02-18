@@ -4,6 +4,9 @@ github.com/sirupsen/logrus
 # github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07
 ## explicit
 github.com/toolkits/file
+# github.com/toolkits/slice v0.0.0-20141116085117-e44a80af2484
+## explicit
+github.com/toolkits/slice
 # golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8
 ## explicit; go 1.17
 golang.org/x/sys/internal/unsafeheader

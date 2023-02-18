@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"selendis/g"
+	"selendis/http"
 )
 
 
@@ -35,5 +36,6 @@ func main() {
 	g.InitRootDir()
 	fmt.Println(g.Config().IP)
 
+	go http.Start()
 	select {}
 }
