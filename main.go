@@ -9,7 +9,7 @@ import (
 
 
 func main() {
-	//cfg 
+	//cfg
 	cfg := flag.String("c", "cfg.yaml", "configuretion file")
 	version := flag.Bool("v", false, "display Version")
 
@@ -23,6 +23,17 @@ func main() {
 
 	// load cfg
 	g.ParseConfig(*cfg)
+
+	// log level
+	if g.Config().Debug {
+		g.InitLog("debug")
+	} else {
+		g.InitLog("info")
+	}
+
+	// init
+	g.InitRootDir()
+	
 
 
 	select {}

@@ -2,13 +2,42 @@ package g
 
 import (
 	"log"
+	"os"
 	"sync"
+
 
 	"github.com/toolkits/file"
 	"gopkg.in/yaml.v3"
 )
 
-type GlobalConfig struct {}
+type GlobalConfig struct {
+	Debug    		bool    		`yaml:"debug"`
+	Hostname 		string			`yaml:"hostname"`
+	IP				string			`yaml:"ip"`
+	Plugin			*PluginConfig	`yaml:"plugin"`
+	Transfer 		*TransferConfig	`yaml:"transfer"`
+	Http			*HttpConfig		`yaml:"http"`
+}
+
+type TransferConfig struct {
+	Enabled  bool     `yaml:"enabled"`
+	Addrs    []string `yaml:"addrs"`
+	Interval int      `yaml:"interval"`
+	Timeout  int      `yaml:"timeout"`
+}
+
+type PluginConfig struct {
+	Enabled bool   `yaml:"enabled"`
+	Dir     string `yaml:"dir"`
+	Git     string `yaml:"git"`
+	LogDir  string `yaml:"logs"`
+}
+
+type HttpConfig struct {
+	Enabled  bool   `yaml:"enabled"`
+	Listen   string `yaml:"listen"`
+	Backdoor bool   `yaml:"backdoor"`
+}
 
 var (
 	ConfigFile string
@@ -16,6 +45,40 @@ var (
 	lock       = new(sync.RWMutex)
 )
 
+func Config() *GlobalConfig {
+	lock.RLock()
+	defer lock.RUnlock()
+	return config
+}
+
+
+func Hostname() (string, error) {
+	hostname := Config().Hostname
+	if hostname != "" {
+		return hostname, nil
+	}
+	if os.Getenv("FALCON_ENDPOINT") != "" {
+		hostname = os.Getenv("FALCON_ENDPOINT")
+		return hostname, nil
+	}
+
+	hostname, err := os.Hostname()
+	if err != nil {
+		log.Println("ERROR: os.Hostname() fail", err)
+	}
+	return hostname, err
+}
+
+func IP() string {
+	ip := Config().IP
+	if ip != "" {
+		return ip
+	}
+	if len(LocalIp) > 0 {
+		ip = LocalIp
+	}
+	return ip
+}
 
 func ParseConfig(cfg string) {
 	if cfg == "" {
