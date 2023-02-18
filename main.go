@@ -33,8 +33,7 @@ func main() {
 
 	// init
 	g.InitRootDir()
-	
-
+	fmt.Println(g.Config().IP)
 
 	select {}
 }
