@@ -10,13 +10,18 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-type GlobalConfig struct {
-	Debug    		bool    		`yaml:"debug"`
-	Hostname 		string			`yaml:"hostname"`
-	IP				string			`yaml:"ip"`
-	Plugin			*PluginConfig	`yaml:"plugin"`
-	Transfer 		*TransferConfig	`yaml:"transfer"`
-	Http			*HttpConfig		`yaml:"http"`
+type PluginConfig struct {
+	Enabled bool   `yaml:"enabled"`
+	Dir     string `yaml:"dir"`
+	Git     string `yaml:"git"`
+	LogDir  string `yaml:"logs"`
+}
+
+type HeartbeatConfig struct {
+	Enabled  bool   `yaml:"enabled"`
+	Addr     string `yaml:"addr"`
+	Interval int    `yaml:"interval"`
+	Timeout  int    `yaml:"timeout"`
 }
 
 type TransferConfig struct {
@@ -26,17 +31,22 @@ type TransferConfig struct {
 	Timeout  int      `yaml:"timeout"`
 }
 
-type PluginConfig struct {
-	Enabled bool   `yaml:"enabled"`
-	Dir     string `yaml:"dir"`
-	Git     string `yaml:"git"`
-	LogDir  string `yaml:"logs"`
-}
-
 type HttpConfig struct {
 	Enabled  bool   `yaml:"enabled"`
 	Listen   string `yaml:"listen"`
 	Backdoor bool   `yaml:"backdoor"`
+}
+
+type GlobalConfig struct {
+	Debug    		bool    			`yaml:"debug"`
+	Hostname 		string				`yaml:"hostname"`
+	IP				string				`yaml:"ip"`
+	Plugin			*PluginConfig		`yaml:"plugin"`
+	Heartbeat		*HeartbeatConfig	`yaml:"heartbeat"`
+	Transfer 		*TransferConfig		`yaml:"transfer"`
+	Http			*HttpConfig			`yaml:"http"`
+	DefaultTags		map[string]string	`yaml:"default-tags"`
+	IgnoreMetrics	map[string]bool		`yaml:"ignore"`
 }
 
 var (

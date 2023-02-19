@@ -7,6 +7,9 @@ github.com/toolkits/file
 # github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce
 ## explicit
 github.com/toolkits/net
+# github.com/toolkits/slice v0.0.0-20141116085117-e44a80af2484
+## explicit
+github.com/toolkits/slice
 # github.com/toolkits/sys v0.0.0-20170615103026-1f33b217ffaf
 ## explicit
 github.com/toolkits/sys

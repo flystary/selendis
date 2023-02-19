@@ -12,6 +12,8 @@ github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07 h1:d/VUIMNTk65Xz69ht
 github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07/go.mod h1:FbXpUxsx5in7z/OrWFDdhYetOy3/VGIJsVHN9G7RUPA=
 github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce h1:XrGffRW+HbN/I45pd25GK3z419YAlHrgTljrQt/ogxk=
 github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce/go.mod h1:6zuR3YGQf7EoHAyqA7EayVehUiQm1ZdGJ2PslJ9Xgls=
+github.com/toolkits/slice v0.0.0-20141116085117-e44a80af2484 h1:ERmNDajjCusGqV3uLhlHhRNpvQiGM1S6pd0RSe3LP+w=
+github.com/toolkits/slice v0.0.0-20141116085117-e44a80af2484/go.mod h1:2ZKxkgYEh//pN54EFSkJBak63sg0LxQQFjQmpEwxQx0=
 github.com/toolkits/sys v0.0.0-20170615103026-1f33b217ffaf h1:1/LnhAvvotcSWDl1ntwUePzLXcyHjAzZ0Ih0F+kKGZU=
 github.com/toolkits/sys v0.0.0-20170615103026-1f33b217ffaf/go.mod h1:GejnAYmB2Pr/2fWKp7OGdd6MzuXvRwClmdQAnvnr++I=
 golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 h1:0A+M6Uqn+Eje4kHMK80dtF3JCXC4ykBgQG4Fe06QRhQ=
