@@ -6,4 +6,4 @@ LDFLAGS := -ldflags "-X config.Version=${VERSION}"
 
 .PHONY: build
 build:
-	GOARCH=amd64 GOOS=linux go build -ldflags="-w -s"  -o  selendis main.go
+	GOARCH=amd64 GOOS=linux go build -ldflags="-w -s"  -o  selends  main.go

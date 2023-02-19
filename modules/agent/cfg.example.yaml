@@ -1,0 +1,32 @@
+%YAML 1.1
+---
+debug: true
+hostname: "localhost"
+ip: "127.0.0.1"
+plugin:
+  enabled: false
+  dir: "./plugin"
+  git: "http://github/fly/xx.git"
+  logs: "./logs"
+heartbeat:
+  enabled: true
+  addr: "127.0.0.1:6030"
+  interval: 60
+  timeout: 1000
+transfer:
+  enabled: true
+  addrs:
+    - "127.0.0.1:8433"
+    - "127.0.0.1:8434"
+  interval: 60
+  timeout: 1000
+http:
+  enabled: true
+  listen: ":8080"
+  backdoor: false
+default-tags:
+  ssh: sshd
+  ftp: ftpd
+ignore:
+  cpu.used: true
+  sys.port: true
