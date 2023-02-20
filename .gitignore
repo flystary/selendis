@@ -1,5 +1,5 @@
-selendis/modules/agent/agent
-selendis/modules/transfer/transfer
+modules/agent/agent
+modules/transfer/transfer
 selendis
 .vscode
 .idea
