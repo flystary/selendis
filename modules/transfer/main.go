@@ -6,11 +6,13 @@ import (
 	"os"
 	"selendis/modules/transfer/g"
 	"selendis/modules/transfer/http"
+	"selendis/modules/transfer/net/receiver"
+	"selendis/modules/transfer/tools/proc"
 )
 
-
-
 func main() {
+
+	g.Version = Version
 
 	cfg := flag.String("c", "cfg.yaml", "configuration file")
 	version := flag.Bool("v", false, "show version")
@@ -22,6 +24,9 @@ func main() {
 	}
 
 	g.ParseConfig(*cfg)
+	proc.Start()
+
+	receiver.Start()
 
 	http.Start()
 
