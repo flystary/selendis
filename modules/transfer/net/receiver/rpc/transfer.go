@@ -2,6 +2,7 @@ package rpc
 
 import (
 	"fmt"
+	"log"
 	"selendis/model"
 	"time"
 )
@@ -38,7 +39,7 @@ func RecvMetricValues(args []*model.MetricValue, reply *model.TransferResponse, 
 
 	// items := []*model.MetaData{}
 
-
+	log.Println(args)
 	reply.Message = "ok"
 	reply.Total = len(args)
 	reply.Latency = (time.Now().UnixNano() - start.UnixNano()) / 1000000
