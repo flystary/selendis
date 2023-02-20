@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"selendis/modules/agent/cron"
 	"selendis/modules/agent/g"
 	"selendis/modules/agent/http"
 )
@@ -33,7 +34,14 @@ func main() {
 
 	// init
 	g.InitRootDir()
-	fmt.Println(g.Config().IP)
+	g.InitLocalIp()
+	g.InitRpcClients()
+
+	go cron.InitDataHistory()
+	cron.ReportAgentStatus()
+	cron.SyncTrustableTps()
+
+	cron.Collect()
 
 	go http.Start()
 	select {}
