@@ -1,0 +1,13 @@
+%YAML 1.1
+---
+debug: true
+database:  "root:@tcp(127.0.0.1:3306)/falcon_portal?loc=Local&parseTime=true"
+hosts: "localhost"
+listen: ":6030"
+max-conns: 20
+max-idle:  100
+trustable:
+  - "ips"
+http:
+  enabled: true
+  listen: "0.0.0.0:6031"

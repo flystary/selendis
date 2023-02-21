@@ -1,5 +1,6 @@
 modules/agent/agent
 modules/transfer/transfer
+modules/hbs/hbs
 selendis
 .vscode
 .idea
