@@ -1,8 +1,8 @@
 package cron
 
 import (
-	// "selendis/modules/agent/funcs"
 	"selendis/model"
+	"selendis/modules/agent/funcs"
 	"selendis/modules/agent/g"
 	"time"
 )
@@ -10,7 +10,7 @@ import (
 
 func InitDataHistory() {
 	for {
-		// funcs.UpdateCpuStat()
+		funcs.UpdateCpuStat()
 		// funcs.UpdateDiskStats()
 		time.Sleep(g.COLLECT_INTERVAL)
 	}
@@ -25,9 +25,9 @@ func Collect() {
 		return
 	}
 
-	// for _, v := range funcs.Mappers {
-	// 	go collect(int64(v.Interval), v.Fs)
-	// }
+	for _, v := range funcs.Mappers {
+		go collect(int64(v.Interval), v.Fs)
+	}
 }
 
 func collect(sec int64, fns []func() []*model.MetricValue) {
@@ -71,6 +71,7 @@ func collect(sec int64, fns []func() []*model.MetricValue) {
 			mvs[j].Timestamp= now
 		}
 
+		// fmt.Println(mvs)
 		g.SendToTransfer(mvs)
 	}
 }

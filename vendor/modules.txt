@@ -16,6 +16,9 @@ github.com/toolkits/file
 # github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce
 ## explicit
 github.com/toolkits/net
+# github.com/toolkits/nux v0.0.0-20200401110743-debb3829764a
+## explicit
+github.com/toolkits/nux
 # github.com/toolkits/proc v0.0.0-20170520054645-8c734d0eb018
 ## explicit
 github.com/toolkits/proc

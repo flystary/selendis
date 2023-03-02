@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"selendis/modules/agent/cron"
+	"selendis/modules/agent/funcs"
 	"selendis/modules/agent/g"
 	"selendis/modules/agent/http"
 )
@@ -36,6 +37,8 @@ func main() {
 	g.InitRootDir()
 	g.InitLocalIp()
 	g.InitRpcClients()
+
+	funcs.BuildMappers()
 
 	go cron.InitDataHistory()
 	cron.ReportAgentStatus()

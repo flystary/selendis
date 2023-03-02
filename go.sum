@@ -20,6 +20,8 @@ github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07 h1:d/VUIMNTk65Xz69ht
 github.com/toolkits/file v0.0.0-20160325033739-a5b3c5147e07/go.mod h1:FbXpUxsx5in7z/OrWFDdhYetOy3/VGIJsVHN9G7RUPA=
 github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce h1:XrGffRW+HbN/I45pd25GK3z419YAlHrgTljrQt/ogxk=
 github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce/go.mod h1:6zuR3YGQf7EoHAyqA7EayVehUiQm1ZdGJ2PslJ9Xgls=
+github.com/toolkits/nux v0.0.0-20200401110743-debb3829764a h1:tZ18kQ73hny2GuMFDP38LIq0KFAF3hLBqc3kpjAyVlE=
+github.com/toolkits/nux v0.0.0-20200401110743-debb3829764a/go.mod h1:YO6BC09QPN1xharvGj2ZKH3uFILpBkrOWKxEgLYfqoo=
 github.com/toolkits/proc v0.0.0-20170520054645-8c734d0eb018 h1:3XcjQU/SBh80DXhAZOekQMb287zmYwIyaBlWIo8MhA8=
 github.com/toolkits/proc v0.0.0-20170520054645-8c734d0eb018/go.mod h1:qUAga2ZoGIcH8+lJeKAutG8SJry/D4+dQCKnmGbqk9s=
 github.com/toolkits/slice v0.0.0-20141116085117-e44a80af2484 h1:ERmNDajjCusGqV3uLhlHhRNpvQiGM1S6pd0RSe3LP+w=
